@@ -1,0 +1,17 @@
+.env.*.local
+
+# Build Outputs
+dist/
+build/
+
+# Database & Logs
+*.db
+*.sqlite
+*.sqlite3
+*.log
+
+# Editor & OS Files
+.DS_Store
+.idea/
+config.bat
+node_modules

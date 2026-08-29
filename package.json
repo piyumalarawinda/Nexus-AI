@@ -6,13 +6,15 @@
     "setup": "npm run setup:backend && npm run setup:frontend",
     "setup:backend": "cd backend && npm install && npx prisma db push",
     "setup:frontend": "cd frontend && npm install",
-    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
-    "dev:backend": "cd backend && npm run dev",
-    "dev:frontend": "cd frontend && npm run dev",
+    "dev": "node init && concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "node init && cd backend && npm run dev",
+    "dev:frontend": "node init && cd frontend && npm run dev",
     "test": "cd backend && npm test",
-    "build": "cd backend && npm run build && cd ../frontend && npm run build"
+    "build": "node init && cd backend && npm run build && cd ../frontend && npm run build"
   },
   "devDependencies": {
-    "concurrently": "^8.2.2"
+    "concurrently": "^8.2.2",
+    "dotenv": "^8.2.0",
+    "node-fetch": "^3.3.2"
   }
 }
